@@ -1,0 +1,67 @@
+-- Quantidade total de Clientes
+SELECT COUNT (*) FROM clientes
+
+-- Divisão de sexo entre os clientes
+SELECT COUNT (*) as [Qtdn por sexo], sexo
+FROM clientes
+group by sexo
+
+-- Quantidade por estado
+SELECT COUNT(estado) as [Qtdn por estado], estado
+FROM clientes
+group by estado
+order by [Qtdn por estado] DESC
+
+-- Quantidade por idade (top 5)
+SELECT TOP 5 COUNT(idade) as [Qtnd por idade], idade
+FROM clientes
+group by idade
+order by [Qtnd por idade] DESC
+
+-- TOP 5 páginas mais curtidas
+SELECT TOP 5 COUNT(pagina) as [qtnd de likes], pagina
+FROM redes
+GROUP BY pagina
+order by [qtnd de likes] desc
+
+-- Quantidade de compras efetivadas no mês de março
+SELECT COUNT(*) as [Qntd de compras] 
+FROM transacoes
+where status='aprovada'
+and data='Mar-20'
+
+-- Mostre em um gráfico/tabela a quantidade de compras aprovadas e o valor gasto no uber de janeiro a maio (mês a mês)
+SELECT DISTINCT DATA, SUM(valor) as [Valor Total das Compras], COUNT(id_transacao) as [Qtnd de compras Aprovadas]
+FROM transacoes
+WHERE status='aprovada'
+and estabelecimento='Uber'
+group by data
+
+-- Análise de Aumento/Diminuição significativo no último mês
+SELECT SUM(valor) as [Soma dos Valores], data, status
+from transacoes
+group by data, status
+order by status
+
+-- Qual foi o valor total gasto e a quantidade de compras feitas na Zara por mulheres?
+SELECT COUNT(id_transacao) as [Qtnd Compra], SUM(valor) as [Valor gasto em compras aprovadas], data
+FROM transacoes T1
+INNER JOIN clientes T2 on T1.id_email = T2.id_email
+WHERE T2.sexo='feminino'
+and T1.status='aprovada'
+and T1.estabelecimento like '%zara%'
+group by data
+
+-- Qual foi o valor total gasto e a quantidade de compras feitas na Zara por mulheres?
+SELECT COUNT(id_transacao) as [Qtnd Compra], SUM(valor) as [Valor gasto em Compras Aprovadas]
+FROM transacoes T1
+INNER JOIN clientes T2 on T1.id_email = T2.id_email
+where T2.sexo='feminino'
+and T1.status='aprovada'
+and T1.estabelecimento like '%zara%'
+
+-- Quantidade de compras e valor mês a mês
+SELECT COUNT(id_transacao) as [Qtnd Compra], SUM(valor) as [Valor Gasto em Compras Aprovadas], data
+FROM transacoes
+group by data
+
