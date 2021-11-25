@@ -4,7 +4,7 @@ No GitHub está a análise via Google Collab/Jupyter Notebook, um arquivo TXT co
 
 As análises realizadas foram em três segmentos:
 - Excel: Criação de uma Dashboard para visualização de dados
-- SQL Server: ciação de um banco de dados para importar as planilhas e realizar consultas através da linguagem SQL
+- SQL Server: criação de um banco de dados para importar as planilhas e realizar consultas através da linguagem SQL
 - Python - Jupyter Notebook: importando as planilhas para o Google Collab para realizar as análises via Pyhton, Biblioteca Pandas e Seaborn.
 
 As questões do case foram:
