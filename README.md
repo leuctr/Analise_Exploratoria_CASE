@@ -1,5 +1,5 @@
-# Primeiro Case
-Case realizado para uma vaga de estágio em análise de dados, onde foi encaminhado três planilhas CSV para uma análise EXPLORATÓRIA DE DADOS e responder 6 questões em especificos, com autorização para acrescentar análises realizadas.
+# Análise Exploratória de Dados
+Atividade de um case realizado para uma vaga de estágio em análise de dados, onde foi encaminhado três planilhas CSV para uma análise EXPLORATÓRIA DE DADOS e responder 6 questões em especificos, com autorização para acrescentar análises realizadas.
 No GitHub está a análise via Google Collab/Jupyter Notebook, um arquivo TXT com os códigos em SQL e a Dashboard criada no excel
 
 As análises realizadas foram em três segmentos:
